@@ -52,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
         myCalendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                // Delete this if statement if you want to be able to select the same date two times
+                // in a row. I added it so that the same date wasn't selected every time you try to
+                // scroll. I'm not sure why this happens but this is the only way I could think of to
+                // fix it.
                 if (currentDate != myCalendar.getDate()) {
                     currentDate = myCalendar.getDate();
                     monthNum = month;
